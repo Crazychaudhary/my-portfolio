@@ -1,0 +1,179 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* "Canvas" colour - not quite white, easier on the eyes */
+    background-color: #fffffe;
+    color: #2d334a;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font looks more "dev" */
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: #fffffe;
+    /* distinct bottom border instead of shadow */
+    border-bottom: 3px solid #2d334a; 
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: #2d334a;
+}
+
+/* Theme Button - The "Eye Grabber" */
+#theme-btn {
+    cursor: pointer;
+    background-color: #ff8906; /* Blazing Orange */
+    color: #fffffe;
+    border: 2px solid #0f0e17;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-family: inherit;
+    /* Hard shadow for retro feel */
+    box-shadow: 4px 4px 0px #0f0e17; 
+    transition: all 0.2s;
+}
+
+#theme-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #0f0e17;
+}
+
+/* Hero Section */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    /* Gradient Text Trick - Humans love adding this */
+    background: linear-gradient(90deg, #ff8906, #f25f4c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #fffffe;
+    border: 3px solid #2d334a;
+    padding: 25px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px #e53170; /* Hot Pink shadow on hover */
+    border-color: #e53170;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Tags */
+.tags {
+    margin: 15px 0;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2d334a;
+    background: #a7a9be; /* Muted purple-grey */
+    padding: 4px 10px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+/* Links */
+.link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fffffe;
+    background-color: #2d334a;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+.link:hover {
+    background-color: #e53170; /* Pop of pink */
+}
+
+/* --- DARK MODE (The "Midnight" Look) --- */
+body.dark-mode {
+    background-color: #0f0e17; /* Deep almost-black purple */
+    color: #a7a9be; /* Soft lavender grey text */
+}
+
+body.dark-mode .navbar {
+    background-color: #0f0e17;
+    border-bottom: 3px solid #ff8906; /* Orange border in dark mode */
+}
+
+body.dark-mode .logo {
+    color: #fffffe;
+}
+
+body.dark-mode #theme-btn {
+    background-color: #e53170; /* Switch accent to Pink in dark mode */
+    border-color: #fffffe;
+    box-shadow: 4px 4px 0px #fffffe;
+    color: #fffffe;
+}
+
+body.dark-mode .card {
+    background-color: #23263a; /* Darker card bg */
+    border-color: #a7a9be;
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 8px 8px 0px #ff8906; /* Orange shadow */
+    border-color: #ff8906;
+}
+
+body.dark-mode .tag {
+    background-color: #ff8906;
+    color: #0f0e17;
+}
+
+body.dark-mode .link {
+    background-color: #fffffe;
+    color: #0f0e17;
+}
+
+body.dark-mode .link:hover {
+    background-color: #ff8906;
+    color: #fff;
+}
